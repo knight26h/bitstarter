@@ -7,7 +7,7 @@ var fd = fs.readFileSync(infile,'utf8');
 //console.log(fd);
 
 var app = express.createServer(express.logger());
-app.use(express.static(path.join( __dirname,'public')));
+app.use(express.static(path.join( __dirname,'bootstrap')));
 
 app.get('/', function(request, response) {
   response.send( fd.toString() );
