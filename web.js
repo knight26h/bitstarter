@@ -7,13 +7,13 @@ var fd = fs.readFileSync(infile,'utf8');
 //console.log(fd);
 
 var app = express.createServer(express.logger());
-app.use(express.static(path.join( __dirname,'bootstrap')));
+app.use(express.static(path.join( __dirname,'www')));
 
 app.get('/', function(request, response) {
   response.send( fd.toString() );
 });
 
-var port = process.env.PORT || 5000;
+var port = process.env.PORT || 8080;
 app.listen(port, function() {
   console.log("Listening on " + port);
 });
